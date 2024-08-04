@@ -1,0 +1,67 @@
+body {
+  background-image: linear-gradient(to right, #4caf50, #ffff00);
+}
+button {
+  background-color: red;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.styled-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.styled-table thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.styled-table th, .styled-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+  background-color: #ddd;
+}
+
+.styled-table td {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .styled-table {
+      width: 100%;
+  }
+
+  .styled-table th, .styled-table td {
+      padding: 8px;
+  }
+}

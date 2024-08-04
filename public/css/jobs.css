@@ -1,0 +1,96 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+    line-height: 1.6;           
+    background-image: linear-gradient(to right, #43a047, #cddc39); 
+    color: #333;                
+    margin: 0;
+  }
+  
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #212121;             
+  }
+  
+ 
+  form {
+    width: 650px;               
+    margin: 20px auto;        
+    padding: 30px;             
+    background-color: #fff;    
+    border-radius: 8px;         
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;      
+  }
+  
+  label {
+    width: 120px;            
+    text-align: right;        
+    margin-right: 15px;       
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    width: calc(100% - 135px); 
+    padding: 10px;            
+    border: 1px solid #ddd;   
+    border-radius: 4px;        
+  }
+  
+  
+  .table-container {
+    overflow-x: auto;        
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;       
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;             
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2; 
+  }
+  
+
+  button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 12px 25px;        
+    border: none;
+    border-radius: 5px;        
+    cursor: pointer;
+    font-size: 16px;          
+    transition: background-color 0.3s ease; 
+  }
+  
+  button:hover {
+    background-color: #45a049; 
+  }
+  
+  button[type="button"] {
+    background-color: #f44336; 
+  }
+  
+  button[type="button"]:hover {
+    background-color: #d32f2f;
+  }
+  
+  header {
+    text-align: center;
+  }
