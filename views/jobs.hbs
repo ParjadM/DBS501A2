@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/jobs.css">
+    <title>Jobs</title>
+</head>
+<body>
+    <form action="/jobs" method="POST" id="myForm">
+        <header>Enter The information to get the result</header>
+        <div class="row">
+            <label for="job_id">JOB ID:</label>
+            <input type="text" id="job_id" name="job_id" required>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="window.location.href = '/'">Home</button>
+            <button type="button" id="cancelBtn">Cancel</button>
+            <button type="submit">Get JOB DESCRIPTION</button> 
+            <button type="submit" onclick="window.location.href = '/jobs/edit'">Edit</button> 
+            <button type="submit" onclick="window.location.href = '/jobs/create'">Create</button> 
+        </div>
+        <header>JOB DESCRIPTION: {{job_desc}}</header> 
+    </form>
+
+    <script>
+        const cancelBtn = document.getElementById("cancelBtn");
+        const inputFields = document.querySelectorAll("#job_id, #input1, #input2, #input3"); 
+
+        cancelBtn.addEventListener("click", function() {
+            inputFields.forEach(input => {
+                input.value = ''; 
+            });
+        });
+    </script>
+</body>
+</html>
+

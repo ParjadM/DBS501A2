@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Hiring Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/employees.css">
+</head>
+
+<body>
+    <h2>Employee Hiring Form</h2>
+
+    <form action="/hire" method="POST">
+        <div class="row">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="row">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="row">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="hireDate" style="margin-left: 20px;">Hire Date:</label>
+            <input type="date" id="hireDate" name="hireDate" value="2024-06-28" required>
+
+            <label for="salary" style="margin-left: 20px;">Salary:</label>
+            <input type="number" id="salary" name="salary" required>
+        </div>
+
+        <div class="row">
+            <label for="jobId">Job Title:</label>
+            <select id="jobId" name="jobId" required>
+                <option value="">(Select Job Title)</option>
+                {{#each jobTitles}}
+                <option value="{{this.[0]}}">{{this.[0]}} - {{this.[1]}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="managerId">Manager:</label>
+            <select id="managerId" name="managerId">
+                <option value="">(No Manager)</option>
+                {{#each managers}}
+                <option value="{{this.[0]}}">{{this.[0]}} - {{this.[1]}}</option>
+                {{/each}}
+            </select>
+        </div>
+ 
+        <div class="row">
+            <label for="departmentId">Department:</label>
+            <select id="departmentId" name="departmentId" required>
+                <option value="">(Select Department)</option>
+                {{#each departments}}
+                <option value="{{this.[0]}}">{{ this.[0] }} - {{this.[1]}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div style="text-align: center;">
+            <button type="button" onclick="clearForm()">Cancel</button>
+            <button type="submit">Hire</button>
+        </div>
+    </form>
+    <div style="text-align: center;">
+        <button type="button" onclick="window.location.href = '/'">Home</button>
+    </div>
+
+    <script>
+
+        //alert box shows successfully!
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hireSuccess = urlParams.get('hireSuccess');
+            const hireError = urlParams.get('hireError');
+
+            if (hireSuccess === 'true') {
+                alert('New employee added successfully!');
+            } else if (hireError) { // Check for hireError
+                alert(decodeURIComponent(hireError)); // Decode the error message
+            }
+        }
+        // Reload the page forcing to refresh everything to blank
+        function clearForm() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
