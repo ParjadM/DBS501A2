@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/jobs.css">
+    <title>Edit Jobs</title>
+</head>
+
+<body>
+    <header>
+        <h2>Edit Jobs</h2>
+    </header>
+
+    <div id="message" style="color: green;">{{message}}</div>
+    <div id="error-message" style="color: red;">{{error}}</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Job Title</th>
+                <th>Min Salary</th>
+                <th>Max Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each jobs}}
+            <tr>
+                <form action="/jobs/edit" method="POST">
+                    <td>{{job_id}}<input type="hidden" name="jobId" value="{{job_id}}"></td>
+                    <td><input type="text" name="jobTitle" value="{{job_title}}"></td>
+                    <td><input type="number" name="minSalary" value="{{min_salary}}" min="0"></td>
+                    <td><input type="number" name="maxSalary" value="{{max_salary}}" min="0"></td>
+                    <td>
+                        <button type="submit">Save</button>
+                    </td>
+                </form>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+    <div class="button-container" style="text-align: center;">
+        <button type="button" onclick="window.location.href = '/'">Home</button>
+    </div>
+
+</body>
+
+</html>
